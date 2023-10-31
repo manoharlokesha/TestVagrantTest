@@ -1,0 +1,46 @@
+public class Playlist
+{
+public static String[] PlayingSong(String[] a, String newSong)
+{
+for(int i=0;i<a.length;i++)
+{
+if(i==a.length-1)
+a[i]=newSong;
+else
+a[i]=a[i+1];
+}
+
+System.out.println("Songs in playlist after playing new song "+newSong+" is ");
+
+for(int k=0;k<a.length;k++)
+{
+System.out.print(a[k]+"  ");
+}
+System.out.println();
+return a;
+}
+public static void main(String[] args)
+{
+//Declaring a Song playlist
+String a[]= {"s1","s2","s3",};
+
+//Printing the current songs the in playlist
+System.out.println("Songs in playlist before playing new song is ");
+
+for(int i=0;i<a.length;i++)
+{
+System.out.print(a[i]+"  ");
+}
+
+System.out.println();
+
+//Playing a(S4) new song and adding that song to playlist by call a method called PlayingSong
+String res1[]=PlayingSong(a,"s4");
+
+//Playing a(S2) new song and adding that song to playlist by call a method called PlayingSong
+String res2[]=PlayingSong(res1, "s2");
+
+PlayingSong(res2, "s5");
+
+}
+}
